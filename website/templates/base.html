@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='base.css') }}">
+
+    <title>Form</title>
+</head>
+<body>
+
+    <sidebar class="sidebar">
+        <div class="logo">
+            <p>Duck</p>
+        </div>
+        <ul class="mainMenu">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/signup">Register</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </sidebar>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <div class="flash-message">
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+        </div>
+    {% endif %}
+    {% endwith %}
+
+    <form method="POST" id="signupForm" action="/signup">
+        <label for="signup">Register For Duck</label>
+
+        <div class="input-box">
+            <input type="text" id="name" name="name" placeholder="Enter your Name">
+            <div class="username-error">
+                <p class="error-text">Please Enter your Name</p>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            <div class="username-error">
+                <p class="error-text">Please Enter your Email Address</p>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <input type="number" id="phone" name="phone" placeholder="Enter your phone number">
+            <div class="username-error">
+                <p class="error-text">Please Enter your Phone Number</p>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <div class="username-error">
+                <p class="error-text">Please Enter your password</p>
+            </div>
+        </div>
+
+        <div class="input-box">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+            <div class="username-error">
+                <p class="error-text">Please Confirm your password</p>
+            </div>
+        </div>
+        <p>Already have an account? <a href="/login">Login</a></p>
+
+        <input type="submit" value="Register" class="submitt">
+    </form>
+
+    <script src="{{ url_for('static', filename='base.js') }}"></script>
+</body>
+</html>

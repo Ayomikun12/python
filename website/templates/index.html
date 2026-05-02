@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+    </style>
+    <title>Duck</title>
+</head>
+<body>
+    <div class="container">
+        <sidebar class="sidebar">
+            <div class="logo">
+                <p>Duck</p>
+            </div>
+            <ul class="mainMenu">
+                <li><a href="/index">Home</a></li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/signup">Register</a></li>
+                <li><a href="/about">About</a></li>
+            </ul>
+        </sidebar>
+        <div class="main">
+            <h1>Welcome to <span>Duck!</span> Modern software website for <span>texting</span> and <span>posting.</span> </h1>
+            <p>Start talking to your friends and family freely today smoothly without any disturbance and more effective with Duck!</p>
+            <div class="reg">
+                <a href="/signup">Register</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

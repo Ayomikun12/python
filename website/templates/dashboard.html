@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard.css') }}">
+</head>
+<body>
+    <sidebar class="sidebar">
+        <div class="logo">
+            <p>Duck</p>
+        </div>
+        <ul class="mainMenu">
+            <li><a href="/index">Home</a></li>
+            <li><a href="/logout">Logout</a></li>
+            <li><a href="/signup">Profile</a></li>
+            <li><a href="/about">About</a></li>
+        </ul>
+    </sidebar>
+    <div class="main">
+        <h1>Welcome, {{ user.name}}</h1>
+    </div>
+    <!-- <nav>
+        <div class="logo">
+            <h1>Welcome, {{ user.name }} 👋</h1>
+        </div>
+        <ul class="mainMenu">
+            <li><button>Home</button></li>
+            <li><button onclick="window.location.href='/logout'">Logout</button></li>
+        </ul>
+    </nav> -->
+
+    <div class="card">
+        <h2>Your Details</h2>
+        <p><strong>Name:</strong> {{ user.name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+    </div>
+    <script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+</body>
+</html>
